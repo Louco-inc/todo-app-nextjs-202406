@@ -1,8 +1,5 @@
 import {
   FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Input,
   Textarea,
   Select,
@@ -10,9 +7,6 @@ import {
   Table,
   Thead,
   Tbody,
-  Tr,
-  Th,
-  Td,
   IconButton,
   TableContainer,
 } from "@chakra-ui/react";
