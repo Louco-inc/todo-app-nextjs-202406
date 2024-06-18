@@ -38,7 +38,7 @@ export default function IndexComponent() {
           </button>
         </div>
       </header>
-      <div className="flex">
+      <div className="h-screen flex">
         <div className="w-1/3 h-full p-8 border-r-2 border-gray">
           <FormControl className="mt-4">
             <label className="text-base font-bold">タスク名</label>
