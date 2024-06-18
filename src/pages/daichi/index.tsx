@@ -20,7 +20,7 @@ import { EditIcon, DeleteIcon } from "@chakra-ui/icons";
 
 export default function IndexComponent() {
   return (
-    <div className="bg-background">
+    <div className="bg-lightgray">
       <header className="h-16 bg-blue p-4  flex justify-between content-center">
         <h1 className="text-3xl text-white font-bold">Todo App</h1>
         <div>
