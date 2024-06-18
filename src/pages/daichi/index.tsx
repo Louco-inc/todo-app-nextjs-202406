@@ -6,18 +6,21 @@ import {
   Input,
   Textarea,
   Select,
+  Button,
   Table,
   Thead,
   Tbody,
   Tr,
   Th,
   Td,
+  IconButton,
   TableContainer,
 } from "@chakra-ui/react";
+import { EditIcon, DeleteIcon } from "@chakra-ui/icons";
 
 export default function IndexComponent() {
   return (
-    <div className="h-full">
+    <div className="bg-background">
       <header className="h-16 bg-blue p-4  flex justify-between content-center">
         <h1 className="text-3xl text-white font-bold">Todo App</h1>
         <div>
@@ -37,64 +40,85 @@ export default function IndexComponent() {
       </header>
       <div className="flex">
         <div className="w-1/3 h-full p-8 border-r-2 border-gray">
-          <FormControl>
-            <FormLabel className="mt-4 text-base font-bold">タスク名</FormLabel>
-            <Input type="email" />
-            <FormLabel className="mt-4 text-base font-bold">説明</FormLabel>
-            <Textarea placeholder="Here is a sample placeholder" />
-            <FormLabel className="mt-4 text-base font-bold">期日</FormLabel>
-            <Input
-              placeholder="Select Date and Time"
-              size="md"
-              type="datetime-local"
-            />
-            <FormLabel className="mt-4 text-base font-bold">
-              ステータス
-            </FormLabel>
-            <Select placeholder="Select option">
-              <option value="option1">Option 1</option>
-              <option value="option2">Option 2</option>
-              <option value="option3">Option 3</option>
-            </Select>
+          <FormControl className="mt-4">
+            <label className="text-base font-bold">タスク名</label>
+            <div className="bg-white">
+              <Input type="email" />
+            </div>
           </FormControl>
+          <FormControl className="mt-6">
+            <label className="text-base font-bold">説明</label>
+            <div className="bg-white rounded-lg">
+              <Textarea />
+            </div>
+          </FormControl>
+          <FormControl className="mt-6">
+            <label className="text-base font-bold">期日</label>
+            <div className="bg-white rounded-lg">
+              <Input
+                placeholder="Select Date and Time"
+                size="md"
+                type="datetime-local"
+              />
+            </div>
+          </FormControl>
+          <FormControl className="mt-6">
+            <label className="text-base font-bold">ステータス</label>
+            <div className="bg-white rounded-lg">
+              <Select placeholder="Select option">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+              </Select>
+            </div>
+          </FormControl>
+          <div className="w-full mt-8 rounded-lg flex justify-center">
+            <Button
+              type="submit"
+              colorScheme="transparent"
+              className="w-64 text-white bg-blue"
+            >
+              保存
+            </Button>
+          </div>
         </div>
-        <TableContainer className="w-2/3 mt-8">
+        <TableContainer className="w-2/3 m-8">
           <Table variant="simple">
             <Thead>
-              <Tr>
-                <Th className="text-base">タスク名</Th>
-                <Th>ステータス</Th>
-                <Th>期日</Th>
-                <Th>更新日</Th>
-                <Th>編集</Th>
-                <Th>削除</Th>
-              </Tr>
+              <tr className="text-left">
+                <th className="text-base text-black">タスク名</th>
+                <th className="text-base text-black">ステータス</th>
+                <th className="text-base text-black">期日</th>
+                <th className="text-base text-black">更新日</th>
+                <th className="text-base text-black">編集</th>
+                <th className="text-base text-black">削除</th>
+              </tr>
             </Thead>
             <Tbody>
-              <Tr>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td>25.4</Td>
-                <Td>25.4</Td>
-                <Td>25.4</Td>
-                <Td>25.4</Td>
-              </Tr>
-              <Tr>
-                <Td>feet</Td>
-                <Td>centimetres (cm)</Td>
-                <Td>30.48</Td>
-                <Td>25.4</Td>
-                <Td>25.4</Td>
-                <Td>25.4</Td>
-              </Tr>
-              <Tr>
-                <Td>yards</Td>
-                <Td>metres (m)</Td>
-                <Td>0.91444</Td>
-                <Td>25.4</Td>
-                <Td>25.4</Td>
-                <Td>25.4</Td>
-              </Tr>
+              <tr className="h-16 bg-white shadow">
+                <td className="pl-4 text-base text-black font-bold">inches</td>
+                <td className="text-base text-black font-bold">
+                  millimetres (mm)
+                </td>
+                <td className="text-base text-black font-bold">2024-06-25</td>
+                <td className="text-base text-black font-bold">2024-06-17</td>
+                <td>
+                  <IconButton
+                    variant="unstyled"
+                    aria-label="Search database"
+                    className="text-base text-black font-bold"
+                    icon={<EditIcon />}
+                  />
+                </td>
+                <td>
+                  <IconButton
+                    variant="unstyled"
+                    aria-label="Search database"
+                    className="text-base text-black font-bold"
+                    icon={<DeleteIcon />}
+                  />
+                </td>
+              </tr>
             </Tbody>
           </Table>
         </TableContainer>

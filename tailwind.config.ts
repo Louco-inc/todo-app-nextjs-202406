@@ -18,6 +18,7 @@ const config: Config = {
         "status_red": "#FF7E7E",
         "status_green": "#29CC7E",
         "red": "#FF4D4D",
+        "background": "#F5F5F5",
 
       }
     },
